@@ -33,6 +33,13 @@ const answer = await inquirer.prompt([
         type: "number",
         name: "amount",
         message: "Enter your ammount to Convert"
-    },
+    }
 ]);
-console.log(answer);
+const { from, to, amount } = answer;
+// if(from && to && amount){
+let result = connversion[from][to] * amount;
+console.log(`your conversion from ${from} to ${to} is ${result}`);
+// }
+// else{
+//   console.log("Invalid Input");
+// }
