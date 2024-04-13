@@ -1,7 +1,7 @@
 import inquirer from "inquirer";
-let connversion = {
+let conversion = {
     "PKR": {
-        "USD": 0.0044,
+        "USD": 0.004434589800443458980044345898,
         "GBP": 0.0037,
         "PKR": 1
     },
@@ -25,21 +25,21 @@ const answer = await inquirer.prompt([
     },
     {
         type: "list",
-        name: "To",
+        name: "to",
         choices: ["PKR", "USD", "GBP"],
         message: "Select your conversion currency :"
     },
     {
         type: "number",
         name: "amount",
-        message: "Enter your ammount to Convert"
+        message: "Enter your ammount to Convert :"
     }
 ]);
 const { from, to, amount } = answer;
-// if(from && to && amount){
-let result = connversion[from][to] * amount;
-console.log(`your conversion from ${from} to ${to} is ${result}`);
-// }
-// else{
-//   console.log("Invalid Input");
-// }
+if (from && to && amount) {
+    let result = conversion[from][to] * amount;
+    console.log(`your conversion from ${from} to ${to} is ${result}`);
+}
+else {
+    console.log("Invalid Input");
+}
