@@ -1,5 +1,4 @@
 #! /usr/bin/env node 
-
 import inquirer from "inquirer";
 let conversion : any= {
   "PKR":{
@@ -61,3 +60,5 @@ if(from && to && amount){
 else{
   console.log("Invalid Input");
 }
+
+console.log(answer);
