@@ -1,32 +1,45 @@
+#! /usr/bin/env node 
 import inquirer from "inquirer";
 let conversion = {
     "PKR": {
-        "USD": 0.004434589800443458980044345898,
+        "USD": 0.004,
         "GBP": 0.0037,
-        "PKR": 1
+        "PKR": 1,
+        "SAR": 0.014,
+        "TRY": 0.116,
+        "INR": 0.301,
+        "CNY": 0.026 // chinees yuan
     },
     "GBP": {
-        "USD": 1.21,
-        "PKR": 271.79,
-        "GBP": 1
+        "USD": 1.245,
+        "PKR": 341.81,
+        "GBP": 1,
+        "SAR": 4.67,
+        "TRY": 40.27,
+        "INR": 103.993,
+        "CYN": 9.01,
     },
     "USD": {
         "PKR": 225.50,
-        "GBP": 0.83,
-        "USD": 1
+        "GBP": 0.803,
+        "USD": 1,
+        "SAR": 3.751,
+        "TRY": 32.342,
+        "INR": 83.52,
+        "CNY": 7.237,
     }
 };
 const answer = await inquirer.prompt([
     {
         type: "list",
         name: "from",
-        choices: ["PKR", "USD", "GBP"],
+        choices: ["PKR", "USD", "GBP", "SAR", "TRY", "INR", "CNY"],
         message: "Select your currency :"
     },
     {
         type: "list",
         name: "to",
-        choices: ["PKR", "USD", "GBP"],
+        choices: ["PKR", "USD", "GBP", "SAR", "TRY", "INR", "CNY"],
         message: "Select your conversion currency :"
     },
     {
